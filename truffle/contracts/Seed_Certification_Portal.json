@@ -1,0 +1,76 @@
+{
+  "contractName": "Seed_Certification_Portal",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.18+commit.87f61d96\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Seed_Certification_Portal.sol\":\"Seed_Certification_Portal\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Seed_Certification_Portal.sol\":{\"keccak256\":\"0xf625ae66e2d50e912bbd3142dbccf19d8760f82dd75a67149578f861fe03af10\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://135d22780e30ce11a1f1bfab8472e68de576834e51e4aa7a207cf63cb99e7671\",\"dweb:/ipfs/QmcYrgJXaBLtoqmvRsFhiaVwvzzLa5DXQGbkLq4jSFxE1M\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220fe089ed96b72e0d5526e921ed12d9d1085a3d8243e36b29dab6cfacff2a5685f64736f6c63430008120033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220fe089ed96b72e0d5526e921ed12d9d1085a3d8243e36b29dab6cfacff2a5685f64736f6c63430008120033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "124:259:2:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "124:259:2:-:0;;;;;",
+  "source": "//SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.14;\r\n\r\n//figure out what all fields will be present in the struct\r\n\r\ncontract Seed_Certification_Portal{\r\n\r\n\r\n    //create a hash on the ipfs and then store it lmao ded.\r\n    //question: do we directly talk to ipfs via frontend or we do so via the smart contract?\r\n\r\n\r\n    //there can be various functions available here.\r\n\r\n\r\n}\r\n",
+  "sourcePath": "/home/samaygandhi/projects/crop_supply_chain/truffle/contracts/Seed_Certification_Portal.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Seed_Certification_Portal.sol",
+    "exportedSymbols": {
+      "Seed_Certification_Portal": [
+        88
+      ]
+    },
+    "id": 89,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 87,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".14"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "34:24:2"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Seed_Certification_Portal",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 88,
+        "linearizedBaseContracts": [
+          88
+        ],
+        "name": "Seed_Certification_Portal",
+        "nameLocation": "133:25:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 89,
+        "src": "124:259:2",
+        "usedErrors": []
+      }
+    ],
+    "src": "34:351:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.18+commit.87f61d96.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-03-25T04:13:27.723Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
