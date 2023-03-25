@@ -49,12 +49,12 @@ const FarmerForm = () => {
       seedQuantity: parseInt(seedQuantity),
     }
 
-    // let ipfs = create("http://localhost:5001");
-    // let result = await ipfs.add(JSON.stringify(farmer));
-    // console.log(result.path);
-    // let res = await convertAsyncIterableToString(ipfs.cat(result.path));
-    // console.log(res);
-    // setJson(res);
+    let ipfs = create("http://localhost:5001");
+    let result = await ipfs.add(JSON.stringify(farmer));
+    console.log(result.path);
+    let res = await convertAsyncIterableToString(ipfs.cat(result.path));
+    console.log(res);
+    setJson(res);
 
     const accounts = await window.ethereum.enable();
     console.log(accounts);
@@ -66,6 +66,7 @@ const FarmerForm = () => {
     const post = await cropSupplyChainContract.methods.register("0x9Cc6F1A9f4D78376B73f617d5EABe83b5d74912e", 0).send({
       from: account,
       gas,
+
     });
 
     console.log(post)
