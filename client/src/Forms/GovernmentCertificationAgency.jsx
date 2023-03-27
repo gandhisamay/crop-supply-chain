@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FarmerForm = () => {
+const GovernmentCertificationAgencyForm = () => {
   return (
     <div>
       <form>
@@ -23,4 +23,4 @@ const FarmerForm = () => {
   );
 }
 
-export default FarmerForm;
+export default GovernmentCertificationAgencyForm;

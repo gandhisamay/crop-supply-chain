@@ -56,6 +56,7 @@ const FarmerForm = () => {
     console.log(res);
     setJson(res);
 
+    //get the current user account and then send the request to that account.
     const accounts = await window.ethereum.enable();
     console.log(accounts);
     const account = accounts[0];
@@ -73,7 +74,7 @@ const FarmerForm = () => {
   }
 
   return (
-    <div>
+    <div className='container mt-5'>
       <form>
         <div class="form-group">
           <label for='name'> Name </label>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const FarmerForm = () => {
   return (
-    <div>
+    <div className='container'>
       <form>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
