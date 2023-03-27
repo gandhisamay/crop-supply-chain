@@ -10,9 +10,9 @@ export const CropSupplyChain = [
     "name": "farmers",
     "outputs": [
       {
-        "internalType": "address",
+        "internalType": "string",
         "name": "",
-        "type": "address"
+        "type": "string"
       }
     ],
     "stateMutability": "view",
@@ -30,9 +30,9 @@ export const CropSupplyChain = [
     "name": "seed_producers",
     "outputs": [
       {
-        "internalType": "address",
+        "internalType": "string",
         "name": "",
-        "type": "address"
+        "type": "string"
       }
     ],
     "stateMutability": "view",
@@ -40,16 +40,42 @@ export const CropSupplyChain = [
     "constant": true
   },
   {
+    "inputs": [],
+    "name": "getFarmers",
+    "outputs": [
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getSeedProducers",
+    "outputs": [
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
-        "internalType": "address",
+        "internalType": "string",
         "name": "add",
-        "type": "address"
+        "type": "string"
       },
       {
-        "internalType": "enum Entity_Type",
+        "internalType": "string",
         "name": "entity_type",
-        "type": "uint8"
+        "type": "string"
       }
     ],
     "name": "register",
@@ -60,14 +86,14 @@ export const CropSupplyChain = [
   {
     "inputs": [
       {
-        "internalType": "address",
+        "internalType": "string",
         "name": "add",
-        "type": "address"
+        "type": "string"
       },
       {
-        "internalType": "enum Entity_Type",
+        "internalType": "string",
         "name": "entity_type",
-        "type": "uint8"
+        "type": "string"
       }
     ],
     "name": "deregister",
@@ -76,3 +102,4 @@ export const CropSupplyChain = [
     "type": "function"
   }
 ];
+

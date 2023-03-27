@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { create } from 'ipfs-http-client'
 import Web3 from 'web3';
 import { CropSupplyChain } from '../CropSupplyChain';
@@ -15,7 +15,7 @@ import { CropSupplyChain } from '../CropSupplyChain';
 // }
 //
 const web3 = new Web3(Web3.givenProvider);
-const contractAddress = "0x9Cc6F1A9f4D78376B73f617d5EABe83b5d74912e";
+const contractAddress = "0x0df387e833Ea5c9F993d278F3336BEB91D31Be76";
 const cropSupplyChainContract = new web3.eth.Contract(CropSupplyChain, contractAddress);
 
 
@@ -27,6 +27,22 @@ const FarmerForm = () => {
   let [fieldBreadth, setFieldBreadth] = useState(0);
   let [seedQuantity, setSeedQuantity] = useState(0);
   let [json, setJson] = useState({});
+  let [account, setAccount] = useState('');
+  let [farmerList, setFarmerList] = useState([]);
+
+  useEffect(() => {
+    async function getMetaMaskAccount() {
+      const accounts = await window.ethereum.request(
+        { method: "eth_requestAccounts" }
+      );
+      console.log(accounts);
+      setAccount(accounts[0]);
+    }
+
+    getMetaMaskAccount();
+    getAllFarmerHashes();
+  }, []);
+
 
   async function convertAsyncIterableToString(asyncIterable) {
     const decoder = new TextDecoder();
@@ -36,6 +52,16 @@ const FarmerForm = () => {
     }
     result += decoder.decode();
     return result;
+  }
+
+  async function getAllFarmerHashes() {
+    const post = await cropSupplyChainContract.methods.getFarmers().call({});
+    const list = post.map((item, index) => {
+      return <li className='list-group-item' key={index}> {item}</li>
+    });
+    setFarmerList(list);
+    // const post = await cropSupplyChainContract.methods.farmers(0).call({});
+    // console.log(post);
   }
 
   async function registerFarmer(event) {
@@ -56,26 +82,21 @@ const FarmerForm = () => {
     console.log(res);
     setJson(res);
 
-    //get the current user account and then send the request to that account.
-    const accounts = await window.ethereum.enable();
-    console.log(accounts);
-    const account = accounts[0];
-    // Get permission to access user funds to pay for gas fees
-    const gas = await cropSupplyChainContract.methods.register("0x9Cc6F1A9f4D78376B73f617d5EABe83b5d74912e", 0).estimateGas();
+    const gas = await cropSupplyChainContract.methods.register(result.path, "Farmer").estimateGas();
     // "0x9Cc6F1A9f4D78376B73f617d5EABe83b5d74912e"
     console.log(`ESTIMATED GAS: ${gas}`);
-    const post = await cropSupplyChainContract.methods.register("0x9Cc6F1A9f4D78376B73f617d5EABe83b5d74912e", 0).send({
+    const post = await cropSupplyChainContract.methods.register(result.path, "Farmer").send({
       from: account,
       gas,
-
     });
-
     console.log(post)
+    getAllFarmerHashes();
+
   }
 
   return (
-    <div className='container mt-5'>
-      <form>
+    <div className='container mt-5 d-flex flex-row'>
+      <form style={{ width: "20rem" }}>
         <div class="form-group">
           <label for='name'> Name </label>
           <input type="text" id='name' className='form-control' placeholder='Enter name' onChange={(e) => setName(e.target.value)} />
@@ -104,9 +125,8 @@ const FarmerForm = () => {
         <button type="submit" class="btn btn-primary" onClick={(e) => registerFarmer(e)}>Submit</button>
       </form>
       <div>
-        <pre className='mt-4'>
-          {JSON.stringify(json, null, 2)}
-        </pre>
+        <h2 className='h2'>Registered Farmers Hash List</h2>
+        <ul className='list-group'>{farmerList}</ul>
       </div>
     </div>
   );
