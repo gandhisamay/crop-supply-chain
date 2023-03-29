@@ -43,20 +43,19 @@ contract Crop_Supply_Chain{
     function deregister(string memory add, string memory entity_type) public{
      string[] storage entities;
       if(compare_strings(entity_type, FARMER)) entities = farmers;
-            /* else if(entity_type == Entity_Type.Seed_Producer) entities = seed_producers; */
-            else entities = seeds;
+      else entities = seeds;
 
-            for(uint i = 0; i < entities.length; i++){
-                if(keccak256(bytes(entities[i])) == keccak256(bytes(add))){
-                    entities[i] = entities[entities.length-1];
-                    entities.pop();
-                    return;
-                }
-            }
+      for(uint i = 0; i < entities.length; i++){
+          if(compare_strings(entities[i], add)){
+              entities[i] = entities[entities.length-1];
+              entities.pop();
+              return;
+          }
+      }
     } 
 
-    function update(string memory old, string memory new, string memory object_type) public {
-      register(new, object_type);
+    function update(string memory old, string memory latest, string memory object_type) public {
+      register(latest, object_type);
       deregister(old, object_type);
     }
 
