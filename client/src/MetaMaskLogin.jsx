@@ -1,4 +1,3 @@
-import react from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const MetaMaskLogin = () => {
@@ -17,8 +16,9 @@ const MetaMaskLogin = () => {
 
 
   return (
-    <div>
-      <button className='btn btn-primary' onClick={(e) => metamaskLogin(e)}>MetaMask Login</button>
+    <div className='d-flex justify-content-center align-items-center' style={{ height: "100vh", width: "100vw" }}>
+      <button className='btn btn-primary' onClick={(e) => metamaskLogin(e)} style={{
+      }}>MetaMask Login</button>
     </div>
   )
 }

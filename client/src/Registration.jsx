@@ -23,16 +23,16 @@ const Registration = () => {
 
 
   return (
-    < div className="container d-flex flex-column justify-content-center align-items-center mt-5" style={{ height: "100%" }}>
+    < div className="container d-flex flex-column justify-content-center align-items-center" style={{ height: "100vh" }}>
       <h1 className="h1">Registration Page</h1>
-      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/seedproducer')}> Seed Producer</button>
-      <button className="btn btn-outline-primary mt-2" style={{ width: "18rem" }} onClick={() => navigate('/register/governmentcertificationagency')}> Government Certification Agency</button>
-      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/farmer')}> Farmer </button>
-      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/wholesaler')}> Wholesaler </button>
-      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/distributor')}> Distributor</button>
-      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/retailer')}> Retailer</button>
-      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/logistics')}> Logistics</button>
-
+      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/seedproducer')}>Seed Producer</button>
+      <button className="btn btn-outline-primary mt-2" style={{ width: "18rem" }} onClick={() => navigate('/register/governmentcertificationagency')}>Government Certification Agency</button>
+      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/farmer')}>Farmer </button>
+      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/wholesaler')}>Wholesaler </button>
+      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/distributor')}>Distributor</button>
+      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/retailer')}>Retailer</button>
+      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/logistics')}>Logistics</button>
+      <button className="btn btn-outline-primary mt-2" style={{ width: "8rem" }} onClick={() => navigate('/register/seed')}>Seed</button>
     </div >
   );
 };

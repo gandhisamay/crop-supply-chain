@@ -16,10 +16,11 @@ import Constants from '../Constants';
 // }
 //
 const web3 = new Web3(Web3.givenProvider);
-const cropSupplyChainContract = new web3.eth.Contract(CropSupplyChain, Constants.contractAddress);
+const contractAddress = Constants.contractAddress;
+const cropSupplyChainContract = new web3.eth.Contract(CropSupplyChain, contractAddress);
 
 
-const FarmerForm = () => {
+const SeedForm = () => {
   let [name, setName] = useState('');
   let [location, setLocation] = useState('');
   let [seedAddress, setSeedAddress] = useState('');
@@ -39,17 +40,14 @@ const FarmerForm = () => {
     }
 
     getMetaMaskAccount();
-    getAllFarmerHashes();
   }, []);
 
-
-
-
   async function getAllFarmerHashes() {
-    const post = await cropSupplyChainContract.methods.get_farmers().call({});
+    const post = await cropSupplyChainContract.methods.get_seeds().call({});
     const list = post.map((item, index) => {
       return <li className='list-group-item' key={index}> {item}</li>
     });
+    console.log(`Seed List: ${post}`)
     setFarmerList(list);
     // const post = await cropSupplyChainContract.methods.farmers(0).call({});
     // console.log(post);
@@ -64,16 +62,16 @@ const FarmerForm = () => {
       fieldBreadth: parseInt(fieldBreadth),
       seedAddress,
       seedQuantity: parseInt(seedQuantity),
+      seedCertificationTestResults: {},
     }
 
     let ipfs = create("http://localhost:5001");
     let result = await ipfs.add(JSON.stringify(farmer));
     console.log(result.path);
 
-    const gas = await cropSupplyChainContract.methods.register(result.path, "Farmer").estimateGas();
-    // "0x9Cc6F1A9f4D78376B73f617d5EABe83b5d74912e"
+    const gas = await cropSupplyChainContract.methods.register(result.path, "Seed").estimateGas();
     console.log(`ESTIMATED GAS: ${gas}`);
-    const post = await cropSupplyChainContract.methods.register(result.path, "Farmer").send({
+    const post = await cropSupplyChainContract.methods.register(result.path, "Seed").send({
       from: account,
       gas,
     });
@@ -82,9 +80,9 @@ const FarmerForm = () => {
   }
 
   return (
-    <div className='container mt-5 d-flex flex-row'>
+    < div className="container d-flex flex-row" style={{ height: "100vh" }}>
       <form className='mr-5' style={{ width: "20rem" }}>
-        <div class="form-group">
+        <div class="form-group mt-5">
           <label for='name'> Name </label>
           <input type="text" id='name' className='form-control' placeholder='Enter name' onChange={(e) => setName(e.target.value)} />
         </div>
@@ -112,11 +110,11 @@ const FarmerForm = () => {
         <button type="submit" class="btn btn-primary" onClick={(e) => registerFarmer(e)}>Submit</button>
       </form>
       <div>
-        <h2 className='h2'>Registered Farmers Hash List</h2>
+        <h2 className='h2 mt-5'>Registered Farmers Hash List</h2>
         <ul className='list-group'>{farmerList}</ul>
       </div>
     </div>
   );
 }
 
-export default FarmerForm;
+export default SeedForm;
