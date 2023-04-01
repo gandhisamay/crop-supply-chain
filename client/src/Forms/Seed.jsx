@@ -40,6 +40,7 @@ const SeedForm = () => {
     }
 
     getMetaMaskAccount();
+    getAllFarmerHashes();
   }, []);
 
   async function getAllFarmerHashes() {
@@ -110,7 +111,7 @@ const SeedForm = () => {
         <button type="submit" class="btn btn-primary" onClick={(e) => registerFarmer(e)}>Submit</button>
       </form>
       <div>
-        <h2 className='h2 mt-5'>Registered Farmers Hash List</h2>
+        <h2 className='h2 mt-5'>Registered Seeds Hash List</h2>
         <ul className='list-group'>{farmerList}</ul>
       </div>
     </div>

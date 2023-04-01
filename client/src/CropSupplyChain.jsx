@@ -138,6 +138,29 @@ export const CropSupplyChain = [
     "inputs": [
       {
         "internalType": "string",
+        "name": "old",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "latest",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "object_type",
+        "type": "string"
+      }
+    ],
+    "name": "update",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
         "name": "add",
         "type": "string"
       },
