@@ -7,8 +7,10 @@ string constant FACTORY = "Factory";
 string constant PROCESSOR = "Processor";
 string constant DISTRIBUTOR = "Distributor";
 string constant RETAILER = "Retailer";
-// string constant 
+string constant WHOLESALER = "Wholesaler";
 string constant VEHICLE = "Vehicle";
+string constant LOGISTICSCOMPANY = "LogisticsCompany";
+string constant SEEDCERTIFICATIONAGENCY = "SeedCertificationAgency";
 string constant SEED = "Seed";
 string constant FARM = "Farm";
 string constant EVAL_ORIGIN = "Eval Origin";

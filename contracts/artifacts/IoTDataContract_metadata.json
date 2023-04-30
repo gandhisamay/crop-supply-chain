@@ -8,6 +8,17 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_reg_con_addr",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "did_address",
 						"type": "string"
@@ -34,6 +45,16 @@
 					{
 						"internalType": "string",
 						"name": "ds_hash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "user_bc_add",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "user_type",
 						"type": "string"
 					}
 				],
@@ -95,35 +116,35 @@
 	},
 	"sources": {
 		"contracts/Constants.sol": {
-			"keccak256": "0xfb974c1231a92fd7fa12fe8b4b0b2814bef1f6a0d5d0b207d44b8ca56325d488",
+			"keccak256": "0x803356c6ecbba9cbeb85387194be052dae137deb544c2fa5cfd51bfc01722e78",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://662d7d7c04cbb7de03ea9db687de8db4f6416755e93eb4fb57f1b143342ff99b",
-				"dweb:/ipfs/QmUh34tpuTrrGaninqG3kGk413gqa3fruxG8AZskWJj3Rd"
+				"bzz-raw://017ff7469fe049d51a27aa08493035597f4e7d71252fc45700a96a9c59b36857",
+				"dweb:/ipfs/QmdL1aDXT6FGmcexjFJoWikrhv1UqrJtQKxzrnmNGPR9uX"
 			]
 		},
 		"contracts/IoTDataContract.sol": {
-			"keccak256": "0x773ad26898c6727711001f716b12c864be2c6cf22af40fae41dc70ba57982fdf",
+			"keccak256": "0xb5d07a9dffd13e14b6fe30e21b101aeac75bed41adb889d7477465095a1dddfd",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://57f40085e4487949a62d17a5e9981d9d9ad51f7bbd53cb1a0d68f20bfeea1678",
-				"dweb:/ipfs/QmP4g7VC9AsLjevKzmq2f9yEg87VJfoE1jSWcauPZ43A7J"
+				"bzz-raw://fd10e9cfdc194603a6d5573ded3cb714162e879190272ec3f2c5695273d438a4",
+				"dweb:/ipfs/QmfTK6g5BPENGjLRaps17TJvpCMpAdQiXvPGX24UWk75AK"
 			]
 		},
 		"contracts/RegistrationContract.sol": {
-			"keccak256": "0xd5bd587a80c1c557de79cad6f9d6c3afd09642aba1eb434a8da8805bc8761bf9",
+			"keccak256": "0x391ed20a569830a73555d691c087dc9b8be1785a07b2cb552657c333e8b55717",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://440a7dab015f60591c4e15a6f8aac1b581e3dd434a8441d4d3d874afba5acf11",
-				"dweb:/ipfs/QmSZfNjyzCGTniDGTJyZQqWGb4NxzPzaTgp77ZEe6SsQ53"
+				"bzz-raw://da0911b9a4dd8c5d8773ae2b5cd36fe0ef4d8c758d8d43d70cc9a26ddfd6eb11",
+				"dweb:/ipfs/Qmc4W3JL8ML3KNFFjPSYkhKyFqYQYaUdwLAvPxpMmTWaHe"
 			]
 		},
 		"contracts/SupplyChainStructs.sol": {
-			"keccak256": "0x1e40856c8e175ae218a5d0b31b8d8201ec904cf73dc3c71dff8fd7058e8720c7",
+			"keccak256": "0x3858b87ac66551279fc4058f1e6f35955f27d074320ac6f7136a877aa3705de7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://68feecccbf54111ae18ece15d2badd1f1564fd1e8c7add113d239403b9fa2fb7",
-				"dweb:/ipfs/QmPByRVPcEbhQ7MGvf5k8qsDBD1Kv1MhatC1Zj3DUGCSAP"
+				"bzz-raw://ce364b5bafbf3fa2b3e58d6ddc64d1014665f3e50c8baa6247ef00f586caf860",
+				"dweb:/ipfs/QmZM3kbi9BRMkHsUogg3imyPgpXjDQr1GFGfBNCSb6Q8R9"
 			]
 		},
 		"hardhat/console.sol": {

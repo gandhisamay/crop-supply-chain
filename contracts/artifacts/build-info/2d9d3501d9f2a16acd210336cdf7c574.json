@@ -1,0 +1,1894 @@
+{
+	"id": "2d9d3501d9f2a16acd210336cdf7c574",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.18",
+	"solcLongVersion": "0.8.18+commit.87f61d96",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/SupplyChainStructs.sol": {
+				"content": "//SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.14;\r\n\r\nstruct IoTDevice{\r\n    string mac_address;\r\n    string did_address;\r\n}\r\n\r\n//where to store this data that will be done later.\r\nstruct Inspection{\r\n    string ds_hash;\r\n    //string inspection_type;\r\n    //string officer_address;\r\n\r\n    uint application_timestamp;\r\n    uint scheduled_inspection_timestamp;\r\n    //string certification_agency_address;\r\n}\r\n\r\nstruct SeedCertificationAgency{\r\n    string lab_name;\r\n    string lab_location;\r\n    string lab_uid;\r\n}\r\n\r\nstruct SeedCertificationResults{\r\n    string sca_uid;\r\n    string field_inspection;\r\n    string bulk_inspection;\r\n    string eval_of_orign;\r\n    string sample_inspection;\r\n    string control_plot_testing;\r\n    string grow_out_test;\r\n}\r\n\r\nstruct Seed{\r\n    //crop whose seed it is\r\n    string name;\r\n    //store ipfs hash address of the seed producer details.\r\n    string seed_producer_bc_add; \r\n}\r\n\r\n\r\nstruct SeedProducer{\r\n    string name;\r\n    string location;\r\n    string blockchain_address;\r\n    //the weighing scales are the iot devices which are present at the seed producer.\r\n    mapping(string => IoTDevice) iot_devices;\r\n}\r\n\r\nstruct Farm{\r\n    string location;\r\n    uint field_area;\r\n    //here the key is the did address of the iot device...this can be changed to the mac address as well\r\n    //or to any other field\r\n    mapping(string => IoTDevice) iot_devices;}\r\n\r\nstruct Farmer{\r\n    string blockchain_address;\r\n    string name;\r\n    string location;\r\n    mapping(string => Farm) farms;\r\n}\r\n\r\nstruct Package{\r\n    //all this is stored in ipfs.\r\n    // uint box_weight;\r\n    // string source_add;\r\n    //I'm thinking adding the logistics vehicle owner address who owns the vehicle.\r\n    uint256 packaging_date;\r\n    uint256 delivery_date;\r\n    string uid;\r\n}\r\n\r\nstruct Vehicle{\r\n    string owner_bc_add;\r\n    string vehicle_number;\r\n    //this gps device will give the current location of the vehicle.\r\n    IoTDevice iot_device;\r\n}\r\n\r\nstruct LogisticsCompany{\r\n    string name;\r\n    string head_office_location;\r\n    string owner_blockchain_address;\r\n    mapping(string => Vehicle) vehicles;\r\n}\r\n\r\nstruct Wholesaler{\r\n    string blockchain_address;\r\n    string name;\r\n    string location;\r\n}\r\n\r\nstruct Factory{\r\n    string name;\r\n    string location;\r\n    mapping(string => IoTDevice) iot_devices;\r\n}\r\n\r\nstruct Processor{\r\n    string blockchain_address;\r\n    string name;\r\n    mapping(string => Factory) factories;\r\n}\r\n\r\nstruct Distributor{\r\n    string blockchain_address;\r\n    string name;\r\n}\r\nstruct Retailer{\r\n    string blockchain_address;\r\n    string name;\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"sources": {
+			"contracts/SupplyChainStructs.sol": {
+				"ast": {
+					"absolutePath": "contracts/SupplyChainStructs.sol",
+					"exportedSymbols": {
+						"Distributor": [
+							133
+						],
+						"Factory": [
+							118
+						],
+						"Farm": [
+							62
+						],
+						"Farmer": [
+							74
+						],
+						"Inspection": [
+							13
+						],
+						"IoTDevice": [
+							6
+						],
+						"LogisticsCompany": [
+							101
+						],
+						"Package": [
+							81
+						],
+						"Processor": [
+							128
+						],
+						"Retailer": [
+							138
+						],
+						"Seed": [
+							40
+						],
+						"SeedCertificationAgency": [
+							20
+						],
+						"SeedCertificationResults": [
+							35
+						],
+						"SeedProducer": [
+							52
+						],
+						"Vehicle": [
+							89
+						],
+						"Wholesaler": [
+							108
+						]
+					},
+					"id": 139,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".14"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "32:24:0"
+						},
+						{
+							"canonicalName": "IoTDevice",
+							"id": 6,
+							"members": [
+								{
+									"constant": false,
+									"id": 3,
+									"mutability": "mutable",
+									"name": "mac_address",
+									"nameLocation": "90:11:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 6,
+									"src": "83:18:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 2,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "83:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 5,
+									"mutability": "mutable",
+									"name": "did_address",
+									"nameLocation": "115:11:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 6,
+									"src": "108:18:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 4,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "108:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "IoTDevice",
+							"nameLocation": "67:9:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "60:70:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "Inspection",
+							"id": 13,
+							"members": [
+								{
+									"constant": false,
+									"id": 8,
+									"mutability": "mutable",
+									"name": "ds_hash",
+									"nameLocation": "218:7:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 13,
+									"src": "211:14:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 7,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "211:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 10,
+									"mutability": "mutable",
+									"name": "application_timestamp",
+									"nameLocation": "301:21:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 13,
+									"src": "296:26:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 9,
+										"name": "uint",
+										"nodeType": "ElementaryTypeName",
+										"src": "296:4:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 12,
+									"mutability": "mutable",
+									"name": "scheduled_inspection_timestamp",
+									"nameLocation": "334:30:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 13,
+									"src": "329:35:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 11,
+										"name": "uint",
+										"nodeType": "ElementaryTypeName",
+										"src": "329:4:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Inspection",
+							"nameLocation": "194:10:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "187:225:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "SeedCertificationAgency",
+							"id": 20,
+							"members": [
+								{
+									"constant": false,
+									"id": 15,
+									"mutability": "mutable",
+									"name": "lab_name",
+									"nameLocation": "460:8:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 20,
+									"src": "453:15:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 14,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "453:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 17,
+									"mutability": "mutable",
+									"name": "lab_location",
+									"nameLocation": "482:12:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 20,
+									"src": "475:19:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 16,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "475:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 19,
+									"mutability": "mutable",
+									"name": "lab_uid",
+									"nameLocation": "508:7:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 20,
+									"src": "501:14:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 18,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "501:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "SeedCertificationAgency",
+							"nameLocation": "423:23:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "416:103:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "SeedCertificationResults",
+							"id": 35,
+							"members": [
+								{
+									"constant": false,
+									"id": 22,
+									"mutability": "mutable",
+									"name": "sca_uid",
+									"nameLocation": "568:7:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 35,
+									"src": "561:14:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 21,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "561:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 24,
+									"mutability": "mutable",
+									"name": "field_inspection",
+									"nameLocation": "589:16:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 35,
+									"src": "582:23:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 23,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "582:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 26,
+									"mutability": "mutable",
+									"name": "bulk_inspection",
+									"nameLocation": "619:15:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 35,
+									"src": "612:22:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 25,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "612:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 28,
+									"mutability": "mutable",
+									"name": "eval_of_orign",
+									"nameLocation": "648:13:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 35,
+									"src": "641:20:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 27,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "641:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 30,
+									"mutability": "mutable",
+									"name": "sample_inspection",
+									"nameLocation": "675:17:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 35,
+									"src": "668:24:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 29,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "668:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 32,
+									"mutability": "mutable",
+									"name": "control_plot_testing",
+									"nameLocation": "706:20:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 35,
+									"src": "699:27:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 31,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "699:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 34,
+									"mutability": "mutable",
+									"name": "grow_out_test",
+									"nameLocation": "740:13:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 35,
+									"src": "733:20:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 33,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "733:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "SeedCertificationResults",
+							"nameLocation": "530:24:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "523:234:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "Seed",
+							"id": 40,
+							"members": [
+								{
+									"constant": false,
+									"id": 37,
+									"mutability": "mutable",
+									"name": "name",
+									"nameLocation": "815:4:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 40,
+									"src": "808:11:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 36,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "808:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 39,
+									"mutability": "mutable",
+									"name": "seed_producer_bc_add",
+									"nameLocation": "894:20:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 40,
+									"src": "887:27:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 38,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "887:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Seed",
+							"nameLocation": "768:4:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "761:158:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "SeedProducer",
+							"id": 52,
+							"members": [
+								{
+									"constant": false,
+									"id": 42,
+									"mutability": "mutable",
+									"name": "name",
+									"nameLocation": "958:4:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 52,
+									"src": "951:11:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 41,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "951:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 44,
+									"mutability": "mutable",
+									"name": "location",
+									"nameLocation": "976:8:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 52,
+									"src": "969:15:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 43,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "969:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 46,
+									"mutability": "mutable",
+									"name": "blockchain_address",
+									"nameLocation": "998:18:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 52,
+									"src": "991:25:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 45,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "991:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 51,
+									"mutability": "mutable",
+									"name": "iot_devices",
+									"nameLocation": "1139:11:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 52,
+									"src": "1110:40:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_IoTDevice_$6_storage_$",
+										"typeString": "mapping(string => struct IoTDevice)"
+									},
+									"typeName": {
+										"id": 50,
+										"keyName": "",
+										"keyNameLocation": "-1:-1:-1",
+										"keyType": {
+											"id": 47,
+											"name": "string",
+											"nodeType": "ElementaryTypeName",
+											"src": "1118:6:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "1110:28:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_IoTDevice_$6_storage_$",
+											"typeString": "mapping(string => struct IoTDevice)"
+										},
+										"valueName": "",
+										"valueNameLocation": "-1:-1:-1",
+										"valueType": {
+											"id": 49,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 48,
+												"name": "IoTDevice",
+												"nameLocations": [
+													"1128:9:0"
+												],
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 6,
+												"src": "1128:9:0"
+											},
+											"referencedDeclaration": 6,
+											"src": "1128:9:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_IoTDevice_$6_storage_ptr",
+												"typeString": "struct IoTDevice"
+											}
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "SeedProducer",
+							"nameLocation": "932:12:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "925:229:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "Farm",
+							"id": 62,
+							"members": [
+								{
+									"constant": false,
+									"id": 54,
+									"mutability": "mutable",
+									"name": "location",
+									"nameLocation": "1183:8:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 62,
+									"src": "1176:15:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 53,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "1176:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 56,
+									"mutability": "mutable",
+									"name": "field_area",
+									"nameLocation": "1203:10:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 62,
+									"src": "1198:15:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 55,
+										"name": "uint",
+										"nodeType": "ElementaryTypeName",
+										"src": "1198:4:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 61,
+									"mutability": "mutable",
+									"name": "iot_devices",
+									"nameLocation": "1384:11:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 62,
+									"src": "1355:40:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_IoTDevice_$6_storage_$",
+										"typeString": "mapping(string => struct IoTDevice)"
+									},
+									"typeName": {
+										"id": 60,
+										"keyName": "",
+										"keyNameLocation": "-1:-1:-1",
+										"keyType": {
+											"id": 57,
+											"name": "string",
+											"nodeType": "ElementaryTypeName",
+											"src": "1363:6:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "1355:28:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_IoTDevice_$6_storage_$",
+											"typeString": "mapping(string => struct IoTDevice)"
+										},
+										"valueName": "",
+										"valueNameLocation": "-1:-1:-1",
+										"valueType": {
+											"id": 59,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 58,
+												"name": "IoTDevice",
+												"nameLocations": [
+													"1373:9:0"
+												],
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 6,
+												"src": "1373:9:0"
+											},
+											"referencedDeclaration": 6,
+											"src": "1373:9:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_IoTDevice_$6_storage_ptr",
+												"typeString": "struct IoTDevice"
+											}
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Farm",
+							"nameLocation": "1165:4:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "1158:239:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "Farmer",
+							"id": 74,
+							"members": [
+								{
+									"constant": false,
+									"id": 64,
+									"mutability": "mutable",
+									"name": "blockchain_address",
+									"nameLocation": "1428:18:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 74,
+									"src": "1421:25:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 63,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "1421:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 66,
+									"mutability": "mutable",
+									"name": "name",
+									"nameLocation": "1460:4:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 74,
+									"src": "1453:11:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 65,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "1453:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 68,
+									"mutability": "mutable",
+									"name": "location",
+									"nameLocation": "1478:8:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 74,
+									"src": "1471:15:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 67,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "1471:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 73,
+									"mutability": "mutable",
+									"name": "farms",
+									"nameLocation": "1517:5:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 74,
+									"src": "1493:29:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Farm_$62_storage_$",
+										"typeString": "mapping(string => struct Farm)"
+									},
+									"typeName": {
+										"id": 72,
+										"keyName": "",
+										"keyNameLocation": "-1:-1:-1",
+										"keyType": {
+											"id": 69,
+											"name": "string",
+											"nodeType": "ElementaryTypeName",
+											"src": "1501:6:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "1493:23:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Farm_$62_storage_$",
+											"typeString": "mapping(string => struct Farm)"
+										},
+										"valueName": "",
+										"valueNameLocation": "-1:-1:-1",
+										"valueType": {
+											"id": 71,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 70,
+												"name": "Farm",
+												"nameLocations": [
+													"1511:4:0"
+												],
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 62,
+												"src": "1511:4:0"
+											},
+											"referencedDeclaration": 62,
+											"src": "1511:4:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_Farm_$62_storage_ptr",
+												"typeString": "struct Farm"
+											}
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Farmer",
+							"nameLocation": "1408:6:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "1401:125:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "Package",
+							"id": 81,
+							"members": [
+								{
+									"constant": false,
+									"id": 76,
+									"mutability": "mutable",
+									"name": "packaging_date",
+									"nameLocation": "1731:14:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 81,
+									"src": "1723:22:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 75,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "1723:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 78,
+									"mutability": "mutable",
+									"name": "delivery_date",
+									"nameLocation": "1760:13:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 81,
+									"src": "1752:21:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 77,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "1752:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 80,
+									"mutability": "mutable",
+									"name": "uid",
+									"nameLocation": "1787:3:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 81,
+									"src": "1780:10:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 79,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "1780:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Package",
+							"nameLocation": "1537:7:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "1530:264:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "Vehicle",
+							"id": 89,
+							"members": [
+								{
+									"constant": false,
+									"id": 83,
+									"mutability": "mutable",
+									"name": "owner_bc_add",
+									"nameLocation": "1826:12:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 89,
+									"src": "1819:19:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 82,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "1819:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 85,
+									"mutability": "mutable",
+									"name": "vehicle_number",
+									"nameLocation": "1852:14:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 89,
+									"src": "1845:21:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 84,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "1845:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 88,
+									"mutability": "mutable",
+									"name": "iot_device",
+									"nameLocation": "1953:10:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 89,
+									"src": "1943:20:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_struct$_IoTDevice_$6_storage_ptr",
+										"typeString": "struct IoTDevice"
+									},
+									"typeName": {
+										"id": 87,
+										"nodeType": "UserDefinedTypeName",
+										"pathNode": {
+											"id": 86,
+											"name": "IoTDevice",
+											"nameLocations": [
+												"1943:9:0"
+											],
+											"nodeType": "IdentifierPath",
+											"referencedDeclaration": 6,
+											"src": "1943:9:0"
+										},
+										"referencedDeclaration": 6,
+										"src": "1943:9:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_struct$_IoTDevice_$6_storage_ptr",
+											"typeString": "struct IoTDevice"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Vehicle",
+							"nameLocation": "1805:7:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "1798:169:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "LogisticsCompany",
+							"id": 101,
+							"members": [
+								{
+									"constant": false,
+									"id": 91,
+									"mutability": "mutable",
+									"name": "name",
+									"nameLocation": "2008:4:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 101,
+									"src": "2001:11:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 90,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2001:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 93,
+									"mutability": "mutable",
+									"name": "head_office_location",
+									"nameLocation": "2026:20:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 101,
+									"src": "2019:27:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 92,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2019:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 95,
+									"mutability": "mutable",
+									"name": "owner_blockchain_address",
+									"nameLocation": "2060:24:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 101,
+									"src": "2053:31:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 94,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2053:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 100,
+									"mutability": "mutable",
+									"name": "vehicles",
+									"nameLocation": "2118:8:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 101,
+									"src": "2091:35:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Vehicle_$89_storage_$",
+										"typeString": "mapping(string => struct Vehicle)"
+									},
+									"typeName": {
+										"id": 99,
+										"keyName": "",
+										"keyNameLocation": "-1:-1:-1",
+										"keyType": {
+											"id": 96,
+											"name": "string",
+											"nodeType": "ElementaryTypeName",
+											"src": "2099:6:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "2091:26:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Vehicle_$89_storage_$",
+											"typeString": "mapping(string => struct Vehicle)"
+										},
+										"valueName": "",
+										"valueNameLocation": "-1:-1:-1",
+										"valueType": {
+											"id": 98,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 97,
+												"name": "Vehicle",
+												"nameLocations": [
+													"2109:7:0"
+												],
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 89,
+												"src": "2109:7:0"
+											},
+											"referencedDeclaration": 89,
+											"src": "2109:7:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_Vehicle_$89_storage_ptr",
+												"typeString": "struct Vehicle"
+											}
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "LogisticsCompany",
+							"nameLocation": "1978:16:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "1971:159:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "Wholesaler",
+							"id": 108,
+							"members": [
+								{
+									"constant": false,
+									"id": 103,
+									"mutability": "mutable",
+									"name": "blockchain_address",
+									"nameLocation": "2165:18:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 108,
+									"src": "2158:25:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 102,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2158:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 105,
+									"mutability": "mutable",
+									"name": "name",
+									"nameLocation": "2197:4:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 108,
+									"src": "2190:11:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 104,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2190:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 107,
+									"mutability": "mutable",
+									"name": "location",
+									"nameLocation": "2215:8:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 108,
+									"src": "2208:15:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 106,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2208:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Wholesaler",
+							"nameLocation": "2141:10:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "2134:93:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "Factory",
+							"id": 118,
+							"members": [
+								{
+									"constant": false,
+									"id": 110,
+									"mutability": "mutable",
+									"name": "name",
+									"nameLocation": "2259:4:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 118,
+									"src": "2252:11:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 109,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2252:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 112,
+									"mutability": "mutable",
+									"name": "location",
+									"nameLocation": "2277:8:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 118,
+									"src": "2270:15:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 111,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2270:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 117,
+									"mutability": "mutable",
+									"name": "iot_devices",
+									"nameLocation": "2321:11:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 118,
+									"src": "2292:40:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_IoTDevice_$6_storage_$",
+										"typeString": "mapping(string => struct IoTDevice)"
+									},
+									"typeName": {
+										"id": 116,
+										"keyName": "",
+										"keyNameLocation": "-1:-1:-1",
+										"keyType": {
+											"id": 113,
+											"name": "string",
+											"nodeType": "ElementaryTypeName",
+											"src": "2300:6:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "2292:28:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_IoTDevice_$6_storage_$",
+											"typeString": "mapping(string => struct IoTDevice)"
+										},
+										"valueName": "",
+										"valueNameLocation": "-1:-1:-1",
+										"valueType": {
+											"id": 115,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 114,
+												"name": "IoTDevice",
+												"nameLocations": [
+													"2310:9:0"
+												],
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 6,
+												"src": "2310:9:0"
+											},
+											"referencedDeclaration": 6,
+											"src": "2310:9:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_IoTDevice_$6_storage_ptr",
+												"typeString": "struct IoTDevice"
+											}
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Factory",
+							"nameLocation": "2238:7:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "2231:105:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "Processor",
+							"id": 128,
+							"members": [
+								{
+									"constant": false,
+									"id": 120,
+									"mutability": "mutable",
+									"name": "blockchain_address",
+									"nameLocation": "2370:18:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 128,
+									"src": "2363:25:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 119,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2363:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 122,
+									"mutability": "mutable",
+									"name": "name",
+									"nameLocation": "2402:4:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 128,
+									"src": "2395:11:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 121,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2395:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 127,
+									"mutability": "mutable",
+									"name": "factories",
+									"nameLocation": "2440:9:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 128,
+									"src": "2413:36:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Factory_$118_storage_$",
+										"typeString": "mapping(string => struct Factory)"
+									},
+									"typeName": {
+										"id": 126,
+										"keyName": "",
+										"keyNameLocation": "-1:-1:-1",
+										"keyType": {
+											"id": 123,
+											"name": "string",
+											"nodeType": "ElementaryTypeName",
+											"src": "2421:6:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "2413:26:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Factory_$118_storage_$",
+											"typeString": "mapping(string => struct Factory)"
+										},
+										"valueName": "",
+										"valueNameLocation": "-1:-1:-1",
+										"valueType": {
+											"id": 125,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 124,
+												"name": "Factory",
+												"nameLocations": [
+													"2431:7:0"
+												],
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 118,
+												"src": "2431:7:0"
+											},
+											"referencedDeclaration": 118,
+											"src": "2431:7:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_Factory_$118_storage_ptr",
+												"typeString": "struct Factory"
+											}
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Processor",
+							"nameLocation": "2347:9:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "2340:113:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "Distributor",
+							"id": 133,
+							"members": [
+								{
+									"constant": false,
+									"id": 130,
+									"mutability": "mutable",
+									"name": "blockchain_address",
+									"nameLocation": "2489:18:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 133,
+									"src": "2482:25:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 129,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2482:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 132,
+									"mutability": "mutable",
+									"name": "name",
+									"nameLocation": "2521:4:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 133,
+									"src": "2514:11:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 131,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2514:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Distributor",
+							"nameLocation": "2464:11:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "2457:72:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "Retailer",
+							"id": 138,
+							"members": [
+								{
+									"constant": false,
+									"id": 135,
+									"mutability": "mutable",
+									"name": "blockchain_address",
+									"nameLocation": "2560:18:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 138,
+									"src": "2553:25:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 134,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2553:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 137,
+									"mutability": "mutable",
+									"name": "name",
+									"nameLocation": "2592:4:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 138,
+									"src": "2585:11:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 136,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "2585:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Retailer",
+							"nameLocation": "2538:8:0",
+							"nodeType": "StructDefinition",
+							"scope": 139,
+							"src": "2531:69:0",
+							"visibility": "public"
+						}
+					],
+					"src": "32:2568:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

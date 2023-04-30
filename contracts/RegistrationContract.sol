@@ -9,8 +9,7 @@ contract RegistrationContract{
     mapping(string => Farmer) public farmers;
     mapping(uint => Seed) public seeds;
     uint seeds_size;
-    mapping(uint => SeedCertificationAgency) public seed_certification_agencies;
-    uint seed_certification_agencies_size;
+    mapping(string => SeedCertificationAgency) public seed_certification_agencies;
     mapping(string => SeedProducer) public seed_producers;
     mapping(string => Wholesaler) public wholesalers;
     mapping(string => Processor) public processors;
@@ -20,7 +19,6 @@ contract RegistrationContract{
     uint constant SALT = 12;
 
     constructor(){
-      seed_certification_agencies_size = 0;
       seeds_size = 0;
     }
 
@@ -44,6 +42,36 @@ contract RegistrationContract{
         return string(str);
     }
 
+    function access_permission(string memory user_hash, string memory user_type) view public returns(bool)  {
+      string memory blockchain_address;
+      if(compare(user_type, SEEDPRODUCER)){
+        blockchain_address = seed_producers[user_hash].blockchain_address;
+      }
+      else if(compare(user_type, FARMER)){
+        blockchain_address = farmers[user_hash].blockchain_address;
+      }
+      else if(compare(user_type, WHOLESALER)){
+        blockchain_address = wholesalers[user_hash].blockchain_address;
+      }
+      else if(compare(user_type, LOGISTICSCOMPANY)){
+        blockchain_address = logistics_companies[user_hash].owner_blockchain_address;
+      }
+      else if(compare(user_type, PROCESSOR)){
+        blockchain_address = processors[user_hash].blockchain_address;
+      }
+      else if(compare(user_type, DISTRIBUTOR)){
+        blockchain_address = distributors[user_hash].blockchain_address;
+      }
+      else if(compare(user_type, RETAILER)){
+        blockchain_address = retailers[user_hash].blockchain_address;
+      }
+      else if(compare(user_type, SEEDCERTIFICATIONAGENCY)){
+        blockchain_address = seed_certification_agencies[user_hash].lab_uid;
+      }
+
+      return !compare(blockchain_address, "");
+    }
+
     function register_farmer(string memory name, string memory bc_add, string memory location) payable public{
       Farmer storage f = farmers[bc_add]; 
       f.name = name;
@@ -53,6 +81,7 @@ contract RegistrationContract{
 
     //register farm function completed
     function register_farm(string memory farmer_bc_add, string memory location, uint field_area)payable public returns(string memory){
+      if(!access_permission(farmer_bc_add, FARMER)) return "ERROR";
       Farmer storage f = farmers[farmer_bc_add];
 
       //generate a random based on timestamp
@@ -64,7 +93,8 @@ contract RegistrationContract{
       return add;
     }
 
-    function register_seed(string memory name, string memory seed_producer_bc_add)payable public{
+    function register_seed(string memory name, string memory seed_producer_bc_add, string memory certification_agency_address)payable public{
+      if(!access_permission(certification_agency_address, SEEDCERTIFICATIONAGENCY)) return;
       Seed storage s = seeds[seeds_size++];
       s.name = name;
       s.seed_producer_bc_add = seed_producer_bc_add;
@@ -78,7 +108,7 @@ contract RegistrationContract{
     }
 
     function register_seed_certification_agency(string memory lab_uid, string memory lab_name, string memory location)payable public{
-      SeedCertificationAgency storage sca = seed_certification_agencies[seed_certification_agencies_size++];
+      SeedCertificationAgency storage sca = seed_certification_agencies[lab_uid];
       sca.lab_uid = lab_uid;
       sca.lab_name = lab_name;
       sca.lab_location = location;
@@ -91,6 +121,7 @@ contract RegistrationContract{
     }
 
     function register_factory(string memory processor_bc_add, string memory name, string memory location) payable public returns(string memory){
+      if(!access_permission(processor_bc_add, PROCESSOR)) return "ERROR";
       Processor storage p = processors[processor_bc_add];
       string memory add = generateRandomAddress(SALT);
       Factory storage f = p.factories[add];
@@ -119,12 +150,9 @@ contract RegistrationContract{
     }
 
     function register_logistics_vehicle(string memory vehicle_no, string memory owner_bc_add, string memory logistics_company_owner_bc_add) payable public {
+      if(!access_permission(logistics_company_owner_bc_add, LOGISTICSCOMPANY)) return;
       Vehicle storage v = logistics_companies[logistics_company_owner_bc_add].vehicles[vehicle_no];
       v.vehicle_number = vehicle_no;
       v.owner_bc_add = owner_bc_add;
     }
-
-
-    
-
 }

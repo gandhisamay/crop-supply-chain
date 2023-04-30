@@ -5,13 +5,19 @@ import "./RegistrationContract.sol";
 import "./SupplyChainStructs.sol";
 
 contract IoTDataContract{
+    RegistrationContract reg_con;
     mapping(string => string[]) iot_data;
+
+    constructor(address _reg_con_addr){
+        reg_con = RegistrationContract(_reg_con_addr);
+    }
 
     function compare(string memory s1, string memory s2) pure private returns(bool) {
       return keccak256(bytes(s1)) == keccak256(bytes(s2));
     }
 
-    function upload_iot_data_hash(string memory did_address, string memory ds_hash)payable public{
+    function upload_iot_data_hash(string memory did_address, string memory ds_hash, string memory user_bc_add, string memory user_type)payable public{
+        if(!reg_con.access_permission(user_bc_add, user_type)) return;
         iot_data[did_address].push(ds_hash);
     }
 

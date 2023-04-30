@@ -106,8 +106,10 @@ struct Processor{
 }
 
 struct Distributor{
+    string blockchain_address;
     string name;
 }
 struct Retailer{
+    string blockchain_address;
     string name;
 }
