@@ -1,0 +1,207 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "salt",
+						"type": "uint256"
+					}
+				],
+				"name": "generateRandomAddress",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "inspections",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "ds_hash",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "application_timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "scheduled_inspection_timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "ds_hash",
+						"type": "string"
+					}
+				],
+				"name": "request_inspection",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "sc_results",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "sca_uid",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "field_inspection",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bulk_inspection",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "eval_of_orign",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "sample_inspection",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "control_plot_testing",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "grow_out_test",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "seed_hash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "eval_of_orign",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "field_inspection",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "sample_inspection",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bulk_inspection",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "control_plot_testing",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "grow_out_test",
+						"type": "string"
+					}
+				],
+				"name": "seed_certification_results",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/CertificationContract.sol": "CertificationContract"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/CertificationContract.sol": {
+			"keccak256": "0xe52a7f731e5a243ef8a77c8f18371d2125ccc091d1c8b81c253a00d069938f3d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a8b61ab6d2fa884f62a0ebdc7873de1d67d01fc8de0b27e45d9a98780b18ec57",
+				"dweb:/ipfs/QmaLunUCt6KQKPopZHJSitN2orLbGv57Rwo5EQseWG4Wv2"
+			]
+		},
+		"contracts/SupplyChainStructs.sol": {
+			"keccak256": "0x6e3ac08bbe9b4dcfe9a4aab42d6706ec15de78bab0fb7e55e94150946203fd85",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8a0fbe8512934616f2185590478b1480d6880319781eee3bec56cbe3f3899223",
+				"dweb:/ipfs/QmaBnr7g79XzXyz78xzvbeqz7MXyXnUetQ61ra31gURZSG"
+			]
+		}
+	},
+	"version": 1
+}

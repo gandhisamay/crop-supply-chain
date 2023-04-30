@@ -1,0 +1,759 @@
+{
+	"id": "ca93141243e9fec47cfa5221dad0b471",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.18",
+	"solcLongVersion": "0.8.18+commit.87f61d96",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/Constants.sol": {
+				"content": "//SPDX-License-Identifier: MIT\npragma solidity ^0.8.14;\n\nstring constant FARMER = \"Farmer\";\nstring constant SEEDPRODUCER = \"SeedProducer\";\nstring constant FACTORY = \"Factory\";\nstring constant PROCESSOR = \"Processor\";\nstring constant DISTRIBUTOR = \"Distributor\";\nstring constant RETAILER = \"Retailer\";\n// string constant \nstring constant VEHICLE = \"Vehicle\";\nstring constant SEED = \"Seed\";\nstring constant FARM = \"Farm\";\nstring constant EVAL_ORIGIN = \"Eval Origin\";\nstring constant FIELD_INSPECTION = \"Field Inspection\";\nstring constant SAMPLE_INSPECTION = \"Sample Inspection\";\nstring constant BULK_INSPECTION = \"Bulk Inspection\";\nstring constant CONTROL_PLOT_TESTING = \"Control Plot Testing\";\nstring constant GROW_OUT_TEST = \"Grow Out Testing\";\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"sources": {
+			"contracts/Constants.sol": {
+				"ast": {
+					"absolutePath": "contracts/Constants.sol",
+					"exportedSymbols": {
+						"BULK_INSPECTION": [
+							40
+						],
+						"CONTROL_PLOT_TESTING": [
+							43
+						],
+						"DISTRIBUTOR": [
+							16
+						],
+						"EVAL_ORIGIN": [
+							31
+						],
+						"FACTORY": [
+							10
+						],
+						"FARM": [
+							28
+						],
+						"FARMER": [
+							4
+						],
+						"FIELD_INSPECTION": [
+							34
+						],
+						"GROW_OUT_TEST": [
+							46
+						],
+						"PROCESSOR": [
+							13
+						],
+						"RETAILER": [
+							19
+						],
+						"SAMPLE_INSPECTION": [
+							37
+						],
+						"SEED": [
+							25
+						],
+						"SEEDPRODUCER": [
+							7
+						],
+						"VEHICLE": [
+							22
+						]
+					},
+					"id": 47,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".14"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "31:24:0"
+						},
+						{
+							"constant": true,
+							"id": 4,
+							"mutability": "constant",
+							"name": "FARMER",
+							"nameLocation": "73:6:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "57:33:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 2,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "57:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "4661726d6572",
+								"id": 3,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "82:8:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_4473bc4cca227a6bb6678e826347a766442caaa5b58eb00db63d083b4a882e69",
+									"typeString": "literal_string \"Farmer\""
+								},
+								"value": "Farmer"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 7,
+							"mutability": "constant",
+							"name": "SEEDPRODUCER",
+							"nameLocation": "108:12:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "92:45:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 5,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "92:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "5365656450726f6475636572",
+								"id": 6,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "123:14:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_e67079ebedd622f69fb273ffcb6f428943541ea9c58525dca8df8b7a23ac946b",
+									"typeString": "literal_string \"SeedProducer\""
+								},
+								"value": "SeedProducer"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 10,
+							"mutability": "constant",
+							"name": "FACTORY",
+							"nameLocation": "155:7:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "139:35:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 8,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "139:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "466163746f7279",
+								"id": 9,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "165:9:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_992f90ffb92c5ad86f1df6829115f18aaea41d6094dadc8955c35086081a7bb9",
+									"typeString": "literal_string \"Factory\""
+								},
+								"value": "Factory"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 13,
+							"mutability": "constant",
+							"name": "PROCESSOR",
+							"nameLocation": "192:9:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "176:39:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 11,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "176:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "50726f636573736f72",
+								"id": 12,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "204:11:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_934a3049239021a059877154aafde53d30275c8e6ae113077544b04f2d0e6ef7",
+									"typeString": "literal_string \"Processor\""
+								},
+								"value": "Processor"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 16,
+							"mutability": "constant",
+							"name": "DISTRIBUTOR",
+							"nameLocation": "233:11:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "217:43:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 14,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "217:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "4469737472696275746f72",
+								"id": 15,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "247:13:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_a19d0db335544d3c3ec35c34b9b35a51bd4861f7162de07d5af409611794db04",
+									"typeString": "literal_string \"Distributor\""
+								},
+								"value": "Distributor"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 19,
+							"mutability": "constant",
+							"name": "RETAILER",
+							"nameLocation": "278:8:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "262:37:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 17,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "262:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "52657461696c6572",
+								"id": 18,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "289:10:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_1534e98f9dd33e3681193a0541f0c2e3d732d183dcdc630aac2b943280af42a0",
+									"typeString": "literal_string \"Retailer\""
+								},
+								"value": "Retailer"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 22,
+							"mutability": "constant",
+							"name": "VEHICLE",
+							"nameLocation": "337:7:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "321:35:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 20,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "321:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "56656869636c65",
+								"id": 21,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "347:9:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_ae25b7c67f95ee4f67c09e3ce3c623354a29ca628b2ec02e873f3fc18dbb1ee3",
+									"typeString": "literal_string \"Vehicle\""
+								},
+								"value": "Vehicle"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 25,
+							"mutability": "constant",
+							"name": "SEED",
+							"nameLocation": "374:4:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "358:29:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 23,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "358:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "53656564",
+								"id": 24,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "381:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_678474fcdf41dfa029be0aac2d514bfd2df4623c983891be29045a2e649513d5",
+									"typeString": "literal_string \"Seed\""
+								},
+								"value": "Seed"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 28,
+							"mutability": "constant",
+							"name": "FARM",
+							"nameLocation": "405:4:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "389:29:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 26,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "389:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "4661726d",
+								"id": 27,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "412:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_477d9dbb55abdb9829dcce4847baf3abac5e98b786bd1ba0d1d7f1d8170c2176",
+									"typeString": "literal_string \"Farm\""
+								},
+								"value": "Farm"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 31,
+							"mutability": "constant",
+							"name": "EVAL_ORIGIN",
+							"nameLocation": "436:11:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "420:43:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 29,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "420:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "4576616c204f726967696e",
+								"id": 30,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "450:13:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_465b45d141ee2a443a618af80c040a8d9ceaa10523be4e523d3808ecf54ac640",
+									"typeString": "literal_string \"Eval Origin\""
+								},
+								"value": "Eval Origin"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 34,
+							"mutability": "constant",
+							"name": "FIELD_INSPECTION",
+							"nameLocation": "481:16:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "465:53:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 32,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "465:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "4669656c6420496e7370656374696f6e",
+								"id": 33,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "500:18:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_4f0a9cfcef23bd6f3d3ccfde96b677fb457cf7a640c0d52bd7f262f271843026",
+									"typeString": "literal_string \"Field Inspection\""
+								},
+								"value": "Field Inspection"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 37,
+							"mutability": "constant",
+							"name": "SAMPLE_INSPECTION",
+							"nameLocation": "536:17:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "520:55:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 35,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "520:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "53616d706c6520496e7370656374696f6e",
+								"id": 36,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "556:19:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_f454d6bde0011c43f494cb87a32f53fb455e3b9b9944b2e0e3a664b9cf895871",
+									"typeString": "literal_string \"Sample Inspection\""
+								},
+								"value": "Sample Inspection"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 40,
+							"mutability": "constant",
+							"name": "BULK_INSPECTION",
+							"nameLocation": "593:15:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "577:51:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 38,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "577:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "42756c6b20496e7370656374696f6e",
+								"id": 39,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "611:17:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_f14464a374e7053628453f0e68178f76efcba6bd4210a44e16115524c71aad91",
+									"typeString": "literal_string \"Bulk Inspection\""
+								},
+								"value": "Bulk Inspection"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 43,
+							"mutability": "constant",
+							"name": "CONTROL_PLOT_TESTING",
+							"nameLocation": "646:20:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "630:61:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 41,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "630:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "436f6e74726f6c20506c6f742054657374696e67",
+								"id": 42,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "669:22:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_b7950e29cd765c085c205b2f01642fc235ec906e1f653c3345e715d8e77d362e",
+									"typeString": "literal_string \"Control Plot Testing\""
+								},
+								"value": "Control Plot Testing"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 46,
+							"mutability": "constant",
+							"name": "GROW_OUT_TEST",
+							"nameLocation": "709:13:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 47,
+							"src": "693:50:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 44,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "693:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "47726f77204f75742054657374696e67",
+								"id": 45,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "725:18:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_bfce50bbeea5df1411862527e221b21ae26b57cb181273807ef95c3e24585e64",
+									"typeString": "literal_string \"Grow Out Testing\""
+								},
+								"value": "Grow Out Testing"
+							},
+							"visibility": "internal"
+						}
+					],
+					"src": "31:714:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

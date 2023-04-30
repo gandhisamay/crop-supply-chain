@@ -1,0 +1,206 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "accept_package_delivery",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "hash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "user_role",
+						"type": "string"
+					}
+				],
+				"name": "add_package",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "crop_packages",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "ds_hash",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "distributor_packages",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "ds_hash",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "processor_packages",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "ds_hash",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "retailer_packages",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "ds_hash",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "seed_packages",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "ds_hash",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "hash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "user_role",
+						"type": "string"
+					}
+				],
+				"name": "verify_package",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/PackageContract.sol": "PackageContract"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Constants.sol": {
+			"keccak256": "0x5810cb4aca2ac537ca18a888a53a80903080c70b9622b2adbfd013177e43df08",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ec388195b04cff66977853038ce9189c33f12fe358874c6ce1be7cb16784c23d",
+				"dweb:/ipfs/QmYZCKnrVpM3NGpz953EpA91Tdb4Ncd5CtWtjB6g2aEX8L"
+			]
+		},
+		"contracts/PackageContract.sol": {
+			"keccak256": "0x68113ebf005a5a7fd4221cb4c39b88ed4eae6c4e298f8d28ce39c3708d89fc40",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bafed768fbb558d5e3cbb2a765232aa685e92990ab93c90e2a72777365006dec",
+				"dweb:/ipfs/QmRVNK548RGdYrY8v7L7sd4ANg2hSaoj9iAsHvyoBt1w8J"
+			]
+		},
+		"contracts/SupplyChainStructs.sol": {
+			"keccak256": "0x0b74709f97cfe0f21a05e007a1d4ad70ec09368f603d7260883f5d78dcf6fbb6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b783e2bd9c06b30c9f5f64dda54ac748ab835eaa3dfa8f99dbe89a9be044f769",
+				"dweb:/ipfs/Qmez9q66uk4Q2ypvY2uAAapSwL9ZsbEhG1JTsVv3V4KoyQ"
+			]
+		}
+	},
+	"version": 1
+}

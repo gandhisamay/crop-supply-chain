@@ -4,7 +4,164 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "add",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "entity_type",
+						"type": "string"
+					}
+				],
+				"name": "deregister",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "farmers",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "get_farmers",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "get_seed_producers",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "get_seeds",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "add",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "object_type",
+						"type": "string"
+					}
+				],
+				"name": "is_object_valid",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "add",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "entity_type",
+						"type": "string"
+					}
+				],
+				"name": "register",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "seed_producers",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "seeds",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -32,19 +189,28 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Crop_Supply_Chain.sol": {
-			"keccak256": "0x31d6f080892530a750582650c7e5372317e77975bdf78d9f48718bae5d1054e7",
-			"urls": [
-				"bzz-raw://514ebc425ecf4b6dcda55862dd7416451e2f698fec2d605579ab470eef87a931",
-				"dweb:/ipfs/QmXzPJeFAdsjaYmGpQmbTRXeiNWXx8CfniqQVotgfSWBkP"
-			]
-		},
-		"contracts/Entity_Portal.sol": {
-			"keccak256": "0x3c0588e05d2f6867186ddaa0af4a149226c5727f243e3ed3703b4ee4c8541b59",
+		"contracts/Constants.sol": {
+			"keccak256": "0x26fba5d047728101f14a299a737098aaa668824727549f31c0a28d46c130cf3b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4e64109cdcdfa3cfb7d62caaa20e0597569a4a7bf3e9f4c35a4eb78f627e3add",
-				"dweb:/ipfs/QmRZwgBTQdgzV3wfVkXBirGn6Fi1qhj5UNyJgyFmuWPF9T"
+				"bzz-raw://79834d3d66dc2f6ec60d8fa3eded288d1fbe3482d42baa9e2c5e81b12fb70209",
+				"dweb:/ipfs/QmYXyMD1bGRDKRLhEoKsQUhuS9GA8D1jCfc4yYESRHoL7C"
+			]
+		},
+		"contracts/Crop_Supply_Chain.sol": {
+			"keccak256": "0xfa044e076b46cb4eb8567bb180bd736b14a00e17bc1435738dc198d617b0ead5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6768ac37f475691db638c1e1a489fc434285e98944337dc806aa28d6c703560d",
+				"dweb:/ipfs/QmTTcJfFcf8UoJ74Bz5nTaBUF7RDoi6Rx5LTHYSJ9rgsBp"
+			]
+		},
+		"contracts/Supply_Chain_Structs.sol": {
+			"keccak256": "0x8b00b4d69a6cbc3fb0fca9be05145cfd8372d7fc8342cb536403353f3b43de95",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://43cce3ae9c7c0daccd5a5a848487467f979906b833c06dfd6aef94dce0ad73df",
+				"dweb:/ipfs/QmYusy4Xdfq9HD4ws4LJfQxbRPSjHVuzXRtsgbr3SDj6Zs"
 			]
 		}
 	},

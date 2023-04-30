@@ -1,0 +1,139 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "did_address",
+						"type": "string"
+					}
+				],
+				"name": "get_io_data",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "did_address",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "ds_hash",
+						"type": "string"
+					}
+				],
+				"name": "upload_iot_data_hash",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "did_address",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "ds_hash",
+						"type": "string"
+					}
+				],
+				"name": "verify_data_hash",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/IoTDataContract.sol": "IoTDataContract"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Constants.sol": {
+			"keccak256": "0xfb974c1231a92fd7fa12fe8b4b0b2814bef1f6a0d5d0b207d44b8ca56325d488",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://662d7d7c04cbb7de03ea9db687de8db4f6416755e93eb4fb57f1b143342ff99b",
+				"dweb:/ipfs/QmUh34tpuTrrGaninqG3kGk413gqa3fruxG8AZskWJj3Rd"
+			]
+		},
+		"contracts/IoTDataContract.sol": {
+			"keccak256": "0x773ad26898c6727711001f716b12c864be2c6cf22af40fae41dc70ba57982fdf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://57f40085e4487949a62d17a5e9981d9d9ad51f7bbd53cb1a0d68f20bfeea1678",
+				"dweb:/ipfs/QmP4g7VC9AsLjevKzmq2f9yEg87VJfoE1jSWcauPZ43A7J"
+			]
+		},
+		"contracts/RegistrationContract.sol": {
+			"keccak256": "0xd5bd587a80c1c557de79cad6f9d6c3afd09642aba1eb434a8da8805bc8761bf9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://440a7dab015f60591c4e15a6f8aac1b581e3dd434a8441d4d3d874afba5acf11",
+				"dweb:/ipfs/QmSZfNjyzCGTniDGTJyZQqWGb4NxzPzaTgp77ZEe6SsQ53"
+			]
+		},
+		"contracts/SupplyChainStructs.sol": {
+			"keccak256": "0x1e40856c8e175ae218a5d0b31b8d8201ec904cf73dc3c71dff8fd7058e8720c7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://68feecccbf54111ae18ece15d2badd1f1564fd1e8c7add113d239403b9fa2fb7",
+				"dweb:/ipfs/QmPByRVPcEbhQ7MGvf5k8qsDBD1Kv1MhatC1Zj3DUGCSAP"
+			]
+		},
+		"hardhat/console.sol": {
+			"keccak256": "0x60b0215121bf25612a6739fb2f1ec35f31ee82e4a8216c032c8243d904ab3aa9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6e29880d33dd479bb046ba306993d26ccb779a4b1d94a046cb3567f22948bb4d",
+				"dweb:/ipfs/QmfTY1qzPt5C63Wc7y6JqfZr5899NRvXYdCpyLzR5FXQic"
+			]
+		}
+	},
+	"version": 1
+}
