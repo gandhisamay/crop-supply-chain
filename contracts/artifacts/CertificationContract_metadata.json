@@ -8,25 +8,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "salt",
-						"type": "uint256"
-					}
-				],
-				"name": "generateRandomAddress",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
@@ -119,6 +100,24 @@
 				"inputs": [
 					{
 						"internalType": "string",
+						"name": "ds_hash",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "appointment_timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "schedule_inspection",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
 						"name": "seed_hash",
 						"type": "string"
 					},
@@ -187,19 +186,19 @@
 	},
 	"sources": {
 		"contracts/CertificationContract.sol": {
-			"keccak256": "0xe52a7f731e5a243ef8a77c8f18371d2125ccc091d1c8b81c253a00d069938f3d",
+			"keccak256": "0xe7f208bae44cbb499ed9cf37ee740e4e7a9bf08861d7b41b9627789692c6b0b2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a8b61ab6d2fa884f62a0ebdc7873de1d67d01fc8de0b27e45d9a98780b18ec57",
-				"dweb:/ipfs/QmaLunUCt6KQKPopZHJSitN2orLbGv57Rwo5EQseWG4Wv2"
+				"bzz-raw://e07aff858fed3fa21bfb945a3c665024d1d61ef0faf6097fa7c32cc745ae7a7d",
+				"dweb:/ipfs/QmUcUrBNh36UCBvpLZj9B96UFQavgzDDG6BqoHoxMZFhCd"
 			]
 		},
 		"contracts/SupplyChainStructs.sol": {
-			"keccak256": "0x6e3ac08bbe9b4dcfe9a4aab42d6706ec15de78bab0fb7e55e94150946203fd85",
+			"keccak256": "0x3858b87ac66551279fc4058f1e6f35955f27d074320ac6f7136a877aa3705de7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8a0fbe8512934616f2185590478b1480d6880319781eee3bec56cbe3f3899223",
-				"dweb:/ipfs/QmaBnr7g79XzXyz78xzvbeqz7MXyXnUetQ61ra31gURZSG"
+				"bzz-raw://ce364b5bafbf3fa2b3e58d6ddc64d1014665f3e50c8baa6247ef00f586caf860",
+				"dweb:/ipfs/QmZM3kbi9BRMkHsUogg3imyPgpXjDQr1GFGfBNCSb6Q8R9"
 			]
 		}
 	},

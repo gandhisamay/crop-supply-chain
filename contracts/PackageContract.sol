@@ -62,10 +62,12 @@ contract PackageContract{
     }
 
     //here the source role is the role or the struct type of the person whose material actually it is
-    function accept_package_delivery(string memory ds_hash, string memory source) public{
+    function accept_delivery(string memory ds_hash, string memory source) public{
         //accept package delivery.
         Package storage p = get_package(ds_hash, source);
         p.delivery_date = block.timestamp;
     }
 
+    //accept shipment
+    //sell package
 }

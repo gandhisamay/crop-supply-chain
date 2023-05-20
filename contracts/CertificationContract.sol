@@ -11,7 +11,10 @@ contract CertificationContract{
     function request_inspection(string memory ds_hash) payable public{
         Inspection storage inspection = inspections[ds_hash];
         inspection.application_timestamp = block.timestamp;
-        inspection.scheduled_inspection_timestamp = block.timestamp;
+    }
+
+    function schedule_inspection(string memory ds_hash, uint appointment_timestamp) payable public{
+      inspections[ds_hash].scheduled_inspection_timestamp = appointment_timestamp;
     }
 
     function seed_certification_results(string memory seed_hash, string memory eval_of_orign, string memory field_inspection, string memory sample_inspection, string memory bulk_inspection, string memory control_plot_testing, string memory grow_out_test)payable public{
